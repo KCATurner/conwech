@@ -7,7 +7,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>conwech._regexlib &mdash; ConWech v2020.08rc1 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=837c38aa" />
 
@@ -167,7 +167,7 @@ representing the sign of the exponent.</p>
 group, excluding any leading zeros.</p>
 </div></blockquote>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">conwech._regexlib</span> <span class="kn">import</span> <span class="n">NUMERIC_STRING</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">conwech._regexlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">NUMERIC_STRING</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">NUMERIC_STRING</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s2">&quot;010&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">groupdict</span><span class="p">()</span>
 <span class="go">{&#39;bsign&#39;: None, &#39;bwhole&#39;: &#39;10&#39;, &#39;bfraction&#39;: None, &#39;esign&#39;: None, &#39;evalue&#39;: None}</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">NUMERIC_STRING</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s2">&quot;-010.020&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">groupdict</span><span class="p">()</span>
@@ -216,7 +216,7 @@ will match and the <strong>whole</strong> will consume the entire string. While,
 technically, all groups are optional (lazy) the expression is not
 allowed to match an empty or whitespace-only string.</p>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">conwech._regexlib</span> <span class="kn">import</span> <span class="n">NUMERAL_STRING</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">conwech._regexlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">NUMERAL_STRING</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">NUMERAL_STRING</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s2">&quot;three hundred twenty-one&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">groupdict</span><span class="p">()</span>
 <span class="go">{&#39;whole&#39;: &#39;three hundred twenty-one&#39;, &#39;numerator&#39;: None, &#39;denominator&#39;: None}</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">NUMERAL_STRING</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s2">&quot;thirty-two and one tenth&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">groupdict</span><span class="p">()</span>
@@ -248,7 +248,7 @@ string or another period name.</p>
 ends with the “illion” suffix.</p>
 </div></blockquote>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">conwech._regexlib</span> <span class="kn">import</span> <span class="n">PERIOD_STRING</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">conwech._regexlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">PERIOD_STRING</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">PERIOD_STRING</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s2">&quot;one million two hundred thirty-four thousand five hundred sixty-seven&quot;</span><span class="p">)</span>
 <span class="go">[(&#39;one&#39;, &#39;million&#39;), (&#39;two hundred thirty-four&#39;, &#39;thousand&#39;), (&#39;five hundred sixty-seven&#39;, &#39;&#39;)]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">next</span><span class="p">(</span><span class="n">PERIOD_STRING</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="s2">&quot;nine unnonagintaducentillion five tresquadragintacentillion&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">groupdict</span><span class="p">()</span>
@@ -265,7 +265,7 @@ components resulting from zillion periods: 86, 106, 806. The expression
 will match the position in the string where “x” needs to be inserted to
 correct the exception.</p>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">conwech._regexlib</span> <span class="kn">import</span> <span class="n">PREFIX_EXCEPTION_X</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">conwech._regexlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">PREFIX_EXCEPTION_X</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">PREFIX_EXCEPTION_X</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;seoctogintillion&#39;</span><span class="p">)</span>
 <span class="go">&#39;sexoctogintillion&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">PREFIX_EXCEPTION_X</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;secentillion&#39;</span><span class="p">)</span>
@@ -283,7 +283,7 @@ components resulting from zillion periods: 23, 26, 33, 36, 43, 46, 54,
 match the position in the string where “s” needs to be inserted to
 correct the exception.</p>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">conwech._regexlib</span> <span class="kn">import</span> <span class="n">PREFIX_EXCEPTION_S</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">conwech._regexlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">PREFIX_EXCEPTION_S</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">PREFIX_EXCEPTION_S</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="s1">&#39;trevignitillion&#39;</span><span class="p">)</span>
 <span class="go">&#39;tresvignitillion&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">PREFIX_EXCEPTION_S</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="s1">&#39;sevignitillion&#39;</span><span class="p">)</span>
@@ -300,7 +300,7 @@ components resulting from zillion periods: 27, 29, 87, 89, 807, 809.
 The expression will match the position in the string where “m” needs to
 be inserted to correct the exception.</p>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">conwech._regexlib</span> <span class="kn">import</span> <span class="n">PREFIX_EXCEPTION_M</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">conwech._regexlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">PREFIX_EXCEPTION_M</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">PREFIX_EXCEPTION_M</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="s1">&#39;septevignitillion&#39;</span><span class="p">)</span>
 <span class="go">&#39;septemvignitillion&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">PREFIX_EXCEPTION_M</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="s1">&#39;novevignitillion&#39;</span><span class="p">)</span>
@@ -318,7 +318,7 @@ components resulting from zillion periods: 17, 19, 37, 39, 47, 49, 57,
 607, 609, 707, 709. The expression will match the position in the string
 where “n” needs to be inserted to correct the exception.</p>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">conwech._regexlib</span> <span class="kn">import</span> <span class="n">PREFIX_EXCEPTION_N</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">conwech._regexlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">PREFIX_EXCEPTION_N</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">PREFIX_EXCEPTION_N</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;septedecillion&#39;</span><span class="p">)</span>
 <span class="go">&#39;septendecillion&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">PREFIX_EXCEPTION_N</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;novedecillion&#39;</span><span class="p">)</span>
@@ -341,7 +341,7 @@ where “n” needs to be inserted to correct the exception.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2025, Kevin Turner.
-      <span class="lastupdated">Last updated on Jan 01, 2025.
+      <span class="lastupdated">Last updated on Feb 01, 2025.
       </span></p>
   </div>
 

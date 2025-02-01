@@ -6,7 +6,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>conwech.functions &mdash; ConWech v2020.08rc1 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=837c38aa" />
 
@@ -84,16 +84,16 @@
 <span class="sd">equivalent, which could be used the same way in the other direction.</span>
 <span class="sd">&quot;&quot;&quot;</span>
 
-<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Union</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Union</span>
 
-<span class="kn">import</span> <span class="nn">conwech.lexicon</span>
-<span class="kn">import</span> <span class="nn">conwech._regexlib</span>
-<span class="kn">import</span> <span class="nn">conwech._exceptions</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">conwech.lexicon</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">conwech._regexlib</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">conwech._exceptions</span>
 
 
 <div class="viewcode-block" id="nameperiod">
 <a class="viewcode-back" href="../../package/conwech.functions.html#conwech.functions.nameperiod">[docs]</a>
-<span class="k">def</span> <span class="nf">nameperiod</span><span class="p">(</span><span class="n">zillion</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">nameperiod</span><span class="p">(</span><span class="n">zillion</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Names the period for the given **zillion** value.</span>
 
@@ -151,7 +151,7 @@
 
 <div class="viewcode-block" id="readperiod">
 <a class="viewcode-back" href="../../package/conwech.functions.html#conwech.functions.readperiod">[docs]</a>
-<span class="k">def</span> <span class="nf">readperiod</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">readperiod</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Convert **name** to its corresponding zillion value.</span>
 
@@ -213,7 +213,7 @@
 
 <div class="viewcode-block" id="number2text">
 <a class="viewcode-back" href="../../package/conwech.functions.html#conwech.functions.number2text">[docs]</a>
-<span class="k">def</span> <span class="nf">number2text</span><span class="p">(</span><span class="n">number</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">number2text</span><span class="p">(</span><span class="n">number</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Construct the English short-scale spelling of **number**.</span>
 
@@ -303,7 +303,7 @@
 
 <div class="viewcode-block" id="text2number">
 <a class="viewcode-back" href="../../package/conwech.functions.html#conwech.functions.text2number">[docs]</a>
-<span class="k">def</span> <span class="nf">text2number</span><span class="p">(</span><span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">text2number</span><span class="p">(</span><span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Convert an English short-scale **text** to it&#39;s numerical value.</span>
 
@@ -353,7 +353,7 @@
         <span class="k">raise</span> <span class="n">conwech</span><span class="o">.</span><span class="n">_exceptions</span><span class="o">.</span><span class="n">InvalidNumeralString</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
 
     <span class="c1"># reused iterative functionality</span>
-    <span class="k">def</span> <span class="nf">iterperiods</span><span class="p">(</span><span class="n">number_text</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">iterperiods</span><span class="p">(</span><span class="n">number_text</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">period_value</span><span class="p">,</span> <span class="n">period_name</span> <span class="ow">in</span> <span class="n">conwech</span><span class="o">.</span><span class="n">_regexlib</span><span class="o">.</span><span class="n">PERIOD_STRING</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">number_text</span><span class="p">):</span>
             <span class="n">period_value</span> <span class="o">=</span> <span class="n">period_value</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;zero&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
 
@@ -404,7 +404,7 @@
 
   <div role="contentinfo">
     <p>&#169; Copyright 2025, Kevin Turner.
-      <span class="lastupdated">Last updated on Jan 01, 2025.
+      <span class="lastupdated">Last updated on Feb 01, 2025.
       </span></p>
   </div>
 
