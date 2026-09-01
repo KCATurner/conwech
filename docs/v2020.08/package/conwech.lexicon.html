@@ -143,13 +143,13 @@ a <em>heavy</em> concern.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">conwech.lexicon</span><span class="w"> </span><span class="kn">import</span> <span class="n">NATURAL_NUMBERS_LT_100</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">NATURAL_NUMBERS_LT_100</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span>
-<span class="go">&#39;seven&#39;</span>
+<span class="go">'seven'</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">NATURAL_NUMBERS_LT_100</span><span class="p">[</span><span class="mi">13</span><span class="p">]</span>
-<span class="go">&#39;thirteen&#39;</span>
+<span class="go">'thirteen'</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">NATURAL_NUMBERS_LT_100</span><span class="p">[</span><span class="mi">99</span><span class="p">]</span>
-<span class="go">&#39;ninety-nine&#39;</span>
+<span class="go">'ninety-nine'</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">INTEGERS_LT_100</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
-<span class="go">(&#39;&#39;, &#39;one&#39;, &#39;two&#39;)</span>
+<span class="go">('', 'one', 'two')</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -164,13 +164,13 @@ literal ‘zero’.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">conwech.lexicon</span><span class="w"> </span><span class="kn">import</span> <span class="n">NATURAL_NUMBERS_LT_1000</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">NATURAL_NUMBERS_LT_1000</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span>
-<span class="go">&#39;seven&#39;</span>
+<span class="go">'seven'</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">NATURAL_NUMBERS_LT_1000</span><span class="p">[</span><span class="mi">13</span><span class="p">]</span>
-<span class="go">&#39;thirteen&#39;</span>
+<span class="go">'thirteen'</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">NATURAL_NUMBERS_LT_1000</span><span class="p">[</span><span class="mi">999</span><span class="p">]</span>
-<span class="go">&#39;nine hundred ninety-nine&#39;</span>
+<span class="go">'nine hundred ninety-nine'</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">NATURAL_NUMBERS_LT_1000</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
-<span class="go">(&#39;&#39;, &#39;one&#39;, &#39;two&#39;)</span>
+<span class="go">('', 'one', 'two')</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -190,19 +190,19 @@ inception of the Conway-Wechsler system.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">conwech.lexicon</span><span class="w"> </span><span class="kn">import</span> <span class="n">ZILLION_PERIOD_PREFIXES</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ZILLION_PERIOD_PREFIXES</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span>
-<span class="go">(&#39;n&#39;, &#39;m&#39;, &#39;b&#39;, &#39;tr&#39;, &#39;quadr&#39;, &#39;quint&#39;, &#39;sext&#39;, &#39;sept&#39;, &#39;oct&#39;, &#39;non&#39;)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">tuple</span><span class="p">(</span><span class="n">prefix</span> <span class="o">+</span> <span class="s1">&#39;illon&#39;</span> <span class="k">for</span> <span class="n">prefix</span> <span class="ow">in</span> <span class="n">ZILLION_PERIOD_PREFIXES</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">5</span><span class="p">])</span>
-<span class="go">(&#39;million&#39;, &#39;billion&#39;, &#39;trillion&#39;, &#39;quadrillion&#39;, &#39;quintillion&#39;)</span>
+<span class="go">('n', 'm', 'b', 'tr', 'quadr', 'quint', 'sext', 'sept', 'oct', 'non')</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">tuple</span><span class="p">(</span><span class="n">prefix</span> <span class="o">+</span> <span class="s1">'illon'</span> <span class="k">for</span> <span class="n">prefix</span> <span class="ow">in</span> <span class="n">ZILLION_PERIOD_PREFIXES</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">5</span><span class="p">])</span>
+<span class="go">('million', 'billion', 'trillion', 'quadrillion', 'quintillion')</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ZILLION_PERIOD_PREFIXES</span><span class="p">[</span><span class="mi">12</span><span class="p">]</span>
-<span class="go">&#39;duodec&#39;</span>
+<span class="go">'duodec'</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ZILLION_PERIOD_PREFIXES</span><span class="p">[</span><span class="mi">345</span><span class="p">]</span>
-<span class="go">&#39;quinquaquadragintatrecent&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;illi&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">ZILLION_PERIOD_PREFIXES</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">p</span><span class="p">)]</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="s1">&#39;12,000,345&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)))</span> <span class="o">+</span> <span class="s1">&#39;illion&#39;</span>
-<span class="go">&#39;duodecillinilliquinquaquadragintatrecentillion&#39;</span>
+<span class="go">'quinquaquadragintatrecent'</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s1">'illi'</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">ZILLION_PERIOD_PREFIXES</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">p</span><span class="p">)]</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="s1">'12,000,345'</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">','</span><span class="p">)))</span> <span class="o">+</span> <span class="s1">'illion'</span>
+<span class="go">'duodecillinilliquinquaquadragintatrecentillion'</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ZILLION_PERIOD_PREFIXES</span><span class="p">[</span><span class="mi">106</span><span class="p">]</span>
-<span class="go">&#39;sexcent&#39;</span>
+<span class="go">'sexcent'</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ZILLION_PERIOD_PREFIXES</span><span class="p">[</span><span class="mi">600</span><span class="p">]</span>
-<span class="go">&#39;sescent&#39;</span>
+<span class="go">'sescent'</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -221,7 +221,7 @@ inception of the Conway-Wechsler system.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright 2026, Kevin Turner.
-      <span class="lastupdated">Last updated on Aug 01, 2026.
+      <span class="lastupdated">Last updated on Sep 01, 2026.
       </span></p>
   </div>
 

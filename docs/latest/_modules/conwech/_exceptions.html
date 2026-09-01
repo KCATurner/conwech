@@ -74,62 +74,62 @@
            <div itemprop="articleBody">
              
   <h1>Source code for conwech._exceptions</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span></span><span class="sd">"""</span>
 <span class="sd">Separate home for custom exceptions raised by ConWech functions.</span>
 
-<span class="sd">What&#39;s that you ask? Why on earth would you subclass ValueError for so</span>
+<span class="sd">What's that you ask? Why on earth would you subclass ValueError for so</span>
 <span class="sd">many specific cases when you can just raise one from the function call?</span>
-<span class="sd">What an insightful question! I&#39;m so glad you asked...</span>
+<span class="sd">What an insightful question! I'm so glad you asked...</span>
 
 <span class="sd">    1)  The main reason is that when a function is designed to take</span>
 <span class="sd">        input as a string that must conform to a particular format, it</span>
-<span class="sd">        helps to have very informative exceptions to say not just, &quot;Hey</span>
-<span class="sd">        I want a string!&quot; but also to whine about the format it needs</span>
+<span class="sd">        helps to have very informative exceptions to say not just, "Hey</span>
+<span class="sd">        I want a string!" but also to whine about the format it needs</span>
 <span class="sd">        that string to be in and having different types of exceptions</span>
 <span class="sd">        for different violations of that format can help, especially if</span>
 <span class="sd">        said format is both multifaceted and highly specific.</span>
 
 <span class="sd">    2)  In order to be more explicit about what exactly went wrong,</span>
 <span class="sd">        some of these exceptions warrant fairly long/detailed messages,</span>
-<span class="sd">        especially if the user doesn&#39;t know what a zillion value is for</span>
-<span class="sd">        instance. You&#39;re README is your code&#39;s first impression; the</span>
+<span class="sd">        especially if the user doesn't know what a zillion value is for</span>
+<span class="sd">        instance. You're README is your code's first impression; the</span>
 <span class="sd">        metaphorical handshake, if you will. The documentation (where we</span>
 <span class="sd">        are now) is the causal conversation that ensues. Fortunately, we</span>
 <span class="sd">        live in a perfect world and every single user always reads every</span>
 <span class="sd">        word of the wonderful detailed documentation provided by every</span>
 <span class="sd">        developer ever... No, but really the problem is, most of the</span>
-<span class="sd">        time, you probably only shake someone&#39;s hand once (if ever). In</span>
-<span class="sd">        that sense, Exceptions are anything from a developer&#39;s subtle</span>
-<span class="sd">        clearing of the throat to the kindest god-smack to the user&#39;s</span>
+<span class="sd">        time, you probably only shake someone's hand once (if ever). In</span>
+<span class="sd">        that sense, Exceptions are anything from a developer's subtle</span>
+<span class="sd">        clearing of the throat to the kindest god-smack to the user's</span>
 <span class="sd">        face for passing up the aforementioned handshake.</span>
 
 <span class="sd">    3)  The exception type is the very first thing a user sees. That</span>
 <span class="sd">        being the case, the more experienced a developer gets, the more</span>
 <span class="sd">        information they tend to glean directly from the name of the</span>
 <span class="sd">        exception with little need to read further. In keeping with the</span>
-<span class="sd">        &quot;no such thing as too much information&quot; theme, you might notice</span>
+<span class="sd">        "no such thing as too much information" theme, you might notice</span>
 <span class="sd">        that most of these exceptions have very verbose names. This is</span>
-<span class="sd">        by design. Now, let&#39;s shift paradigms.</span>
+<span class="sd">        by design. Now, let's shift paradigms.</span>
 
 <span class="sd">    4)  Readability... Not necessarily the exceptions per se (although</span>
-<span class="sd">        there&#39;s a good case there too), but the functions tasked with</span>
+<span class="sd">        there's a good case there too), but the functions tasked with</span>
 <span class="sd">        calling them. Usually, when raising exceptions, the programmer</span>
 <span class="sd">        is left with an ultimatum. Do I lay everything out and explain</span>
 <span class="sd">        why this exception is being raised, or do I keep it short and</span>
 <span class="sd">        sweet by raising quite possibly the most condensed, cryptic</span>
 <span class="sd">        exception possible? Clearly, this module leans into the former</span>
-<span class="sd">        rather aggressively. However, it&#39;s been my experience, that</span>
+<span class="sd">        rather aggressively. However, it's been my experience, that</span>
 <span class="sd">        developers often default to the later. There are many possible</span>
 <span class="sd">        reasons for that, some of which might be reasonable in other</span>
 <span class="sd">        contexts, but not this one (in my humblest of opinions). One</span>
-<span class="sd">        might argue that it&#39;s helpful to have exception strings in</span>
+<span class="sd">        might argue that it's helpful to have exception strings in</span>
 <span class="sd">        plain view and tucking it away in a custom class might be</span>
-<span class="sd">        obfuscating the code. To that, I would say if you&#39;re relying</span>
+<span class="sd">        obfuscating the code. To that, I would say if you're relying</span>
 <span class="sd">        on raw strings to figure out how the code works, the code base</span>
 <span class="sd">        probably has much larger readability issues (the irony that you</span>
 <span class="sd">        just read that from a python docstring is not lost on me). See</span>
 <span class="sd">        my second point (above). The function should tell you how it</span>
-<span class="sd">        works, not how it doesn&#39;t. Leave that to the exception.</span>
+<span class="sd">        works, not how it doesn't. Leave that to the exception.</span>
 
 <span class="sd">    5)  In a similar vein of thought, intelligent use of custom</span>
 <span class="sd">        exceptions can help with QA. Simple exceptions look more like</span>
@@ -137,35 +137,35 @@
 <span class="sd">        miss, but as a developer, the more distinctive your exceptions</span>
 <span class="sd">        are the easier it is to debug. If you go this route, then</span>
 <span class="sd">        ideally, nothing in your codebase should never raise an</span>
-<span class="sd">        exception that isn&#39;t yours, and you should know exactly how to</span>
-<span class="sd">        force your code into raising the ones you&#39;ve written; something</span>
+<span class="sd">        exception that isn't yours, and you should know exactly how to</span>
+<span class="sd">        force your code into raising the ones you've written; something</span>
 <span class="sd">        that you can not only use to spot-check code as you write it,</span>
 <span class="sd">        but that makes for some slick and easy unit testing.</span>
 
 <span class="sd">    6)  I was bored...</span>
 
-<span class="sd">Sorry, I&#39;m off my soapbox now. You probably didn&#39;t need half of that</span>
+<span class="sd">Sorry, I'm off my soapbox now. You probably didn't need half of that</span>
 <span class="sd">explanation and you might still disagree, but there it is anyway. Thank</span>
 <span class="sd">you for coming to my TED talk.</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 
 
 <div class="viewcode-block" id="InvalidNumericString">
 <a class="viewcode-back" href="../../package/conwech._exceptions.html#conwech._exceptions.InvalidNumericString">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">InvalidNumericString</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Custom exception for :func:`.number2text`.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">number</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Args:</span>
 <span class="sd">            number (str): Invalid number-like string input.</span>
 <span class="sd">            *args: Additional ValueError positional arguments.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">InvalidNumericString</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
-            <span class="s1">&#39;</span><span class="se">\n\n\t</span><span class="s1">Input is not a valid number-like format!&#39;</span>
-            <span class="s1">&#39;</span><span class="se">\n\t</span><span class="s1">Did not understand &quot;</span><span class="si">{}</span><span class="s1">&quot;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">number</span><span class="p">),</span>
+            <span class="s1">'</span><span class="se">\n\n\t</span><span class="s1">Input is not a valid number-like format!'</span>
+            <span class="s1">'</span><span class="se">\n\t</span><span class="s1">Did not understand "</span><span class="si">{}</span><span class="s1">"'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">number</span><span class="p">),</span>
             <span class="o">*</span><span class="n">args</span>
         <span class="p">)</span></div>
 
@@ -174,20 +174,20 @@
 <div class="viewcode-block" id="InvalidNumeralString">
 <a class="viewcode-back" href="../../package/conwech._exceptions.html#conwech._exceptions.InvalidNumeralString">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">InvalidNumeralString</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Custom exception for :func:`.text2number`.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Args:</span>
 <span class="sd">            text (str): Invalid number text.</span>
 <span class="sd">            *args: Additional ValueError positional arguments.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">InvalidNumeralString</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
-            <span class="s1">&#39;</span><span class="se">\n\n\t</span><span class="s1">&quot;</span><span class="si">{}</span><span class="s1">&quot; does not follow expected lexical pattern!&#39;</span>
-            <span class="s1">&#39;</span><span class="se">\n\t</span><span class="s1">&quot;&lt;whole_number&gt; [and &lt;decimal_numerator&gt; &lt;decimal_denominator&gt;ths]&quot;&#39;</span>
-            <span class="s1">&#39;</span><span class="se">\n\t</span><span class="s1">See module documentation for more details.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">text</span><span class="p">),</span>
+            <span class="s1">'</span><span class="se">\n\n\t</span><span class="s1">"</span><span class="si">{}</span><span class="s1">" does not follow expected lexical pattern!'</span>
+            <span class="s1">'</span><span class="se">\n\t</span><span class="s1">"&lt;whole_number&gt; [and &lt;decimal_numerator&gt; &lt;decimal_denominator&gt;ths]"'</span>
+            <span class="s1">'</span><span class="se">\n\t</span><span class="s1">See module documentation for more details.'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">text</span><span class="p">),</span>
             <span class="o">*</span><span class="n">args</span>
         <span class="p">)</span></div>
 
@@ -196,20 +196,20 @@
 <div class="viewcode-block" id="InvalidPeriodValueText">
 <a class="viewcode-back" href="../../package/conwech._exceptions.html#conwech._exceptions.InvalidPeriodValueText">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">InvalidPeriodValueText</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Custom exception for :func:`.text2number`.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">period</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Args:</span>
 <span class="sd">            value (str): Invalid period value text.</span>
 <span class="sd">            period (str): Name of the period.</span>
 <span class="sd">            *args: Additional ValueError positional arguments.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">InvalidPeriodValueText</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
-            <span class="s1">&#39;</span><span class="se">\n\n\t</span><span class="s1">Could not determine value for the </span><span class="si">{}</span><span class="s1">s!&#39;</span>
-            <span class="s1">&#39;</span><span class="se">\n\t</span><span class="s1">Did not understand &quot;</span><span class="si">{}</span><span class="s1">&quot;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">period</span> <span class="ow">or</span> <span class="s1">&#39;unit&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">),</span>
+            <span class="s1">'</span><span class="se">\n\n\t</span><span class="s1">Could not determine value for the </span><span class="si">{}</span><span class="s1">s!'</span>
+            <span class="s1">'</span><span class="se">\n\t</span><span class="s1">Did not understand "</span><span class="si">{}</span><span class="s1">"'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">period</span> <span class="ow">or</span> <span class="s1">'unit'</span><span class="p">,</span> <span class="n">value</span><span class="p">),</span>
             <span class="o">*</span><span class="n">args</span>
         <span class="p">)</span></div>
 
@@ -218,20 +218,20 @@
 <div class="viewcode-block" id="InvalidPeriodNameText">
 <a class="viewcode-back" href="../../package/conwech._exceptions.html#conwech._exceptions.InvalidPeriodNameText">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">InvalidPeriodNameText</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    Custom exception for :func:`.readperiod`.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">prefix</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Args:</span>
 <span class="sd">            name (str): Full invalid period name</span>
 <span class="sd">            prefix (str): Invalid prefix in period name</span>
 <span class="sd">            *args: Additional ValueError positional arguments.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">InvalidPeriodNameText</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
-            <span class="s1">&#39;&quot;</span><span class="si">{}</span><span class="s1">&quot; is not a valid Conway-Wechsler period name; &#39;</span>
-            <span class="s1">&#39;specifically, prefix &quot;</span><span class="si">{}</span><span class="s1">&quot; not found&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">prefix</span><span class="p">),</span>
+            <span class="s1">'"</span><span class="si">{}</span><span class="s1">" is not a valid Conway-Wechsler period name; '</span>
+            <span class="s1">'specifically, prefix "</span><span class="si">{}</span><span class="s1">" not found'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">prefix</span><span class="p">),</span>
             <span class="o">*</span><span class="n">args</span>
         <span class="p">)</span></div>
 
@@ -245,7 +245,7 @@
 
   <div role="contentinfo">
     <p>&#169; Copyright 2026, Kevin Turner.
-      <span class="lastupdated">Last updated on Aug 01, 2026.
+      <span class="lastupdated">Last updated on Sep 01, 2026.
       </span></p>
   </div>
 
